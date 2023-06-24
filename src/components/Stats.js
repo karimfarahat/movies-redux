@@ -1,6 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-export default function Stats({ movieList, page }) {
+export default function Stats() {
+  const { page, movieList } = useSelector(({ moviesReducer }) => moviesReducer);
+
   // top item calculation from original movielist state
   const topRatedItem = (movieList) => {
     var tempTopRating = 0;

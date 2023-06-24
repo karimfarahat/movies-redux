@@ -1,6 +1,10 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-export default function Footer({ page, handlePageNext, handlePagePrev }) {
+export default function Footer() {
+  const dispatch = useDispatch();
+  const { page } = useSelector(({ moviesReducer }) => moviesReducer);
+
   return (
     <div
       id="footer"
@@ -9,7 +13,9 @@ export default function Footer({ page, handlePageNext, handlePagePrev }) {
       {page > 1 && (
         <button
           id="previous"
-          onClick={handlePagePrev}
+          onClick={() => {
+            dispatch({ type: "PREV_PAGE", payload: page - 1 });
+          }}
           className="btn btn-outline-secondary"
         >
           Previous
@@ -17,7 +23,9 @@ export default function Footer({ page, handlePageNext, handlePagePrev }) {
       )}
       <button
         id="next"
-        onClick={handlePageNext}
+        onClick={() => {
+          dispatch({ type: "NEXT_PAGE", payload: page + 1 });
+        }}
         className="btn btn-outline-secondary"
       >
         Next
