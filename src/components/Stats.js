@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Stats({ movieList, page }) {
+  // top item calculation from original movielist state
   const topRatedItem = (movieList) => {
     var tempTopRating = 0;
     var topItem = null;
@@ -16,9 +17,7 @@ export default function Stats({ movieList, page }) {
   };
 
   const topMovie = topRatedItem(movieList);
-  //   const topMovieTitle = topMovie.title;
-  //   const topMovieRating = topMovie.vote_average;
-  //   console.log("topMovie", topMovie.title);
+
   return (
     <div className="container">
       <p>Current Page: {page}</p>

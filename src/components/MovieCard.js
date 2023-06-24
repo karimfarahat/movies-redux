@@ -3,6 +3,7 @@ import React from "react";
 export default function MovieCard({ movie, handleSelectMovie }) {
   const imgSrc = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
   return (
+    // card design and onclick
     <div className="col-md-3" onClick={handleSelectMovie}>
       <div
         id={movie.id}
