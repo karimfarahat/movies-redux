@@ -1,12 +1,10 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 export default function MovieCard({ movie }) {
   const imgSrc = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
   const dispatch = useDispatch();
-  const { selectedMovie, movieList } = useSelector(
-    ({ moviesReducer }) => moviesReducer
-  );
+  //
   return (
     // card design and onclick
     <div

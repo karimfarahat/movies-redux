@@ -3,7 +3,6 @@ import { Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function MyModal() {
-  // { movie, handleUnselectMovie }
   const dispatch = useDispatch();
   const { selectedMovie } = useSelector(({ moviesReducer }) => moviesReducer);
   return (
@@ -12,7 +11,6 @@ export default function MyModal() {
       <Modal.Header
         className="p-2"
         closeButton
-        // onClick={handleUnselectMovie}
         onClick={() => {
           dispatch({ type: "UNSELECT_MOVIE", payload: null });
         }}
